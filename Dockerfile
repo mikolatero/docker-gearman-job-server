@@ -10,8 +10,8 @@ RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu trusty main" >  /etc/ap
 	apt-get update && \
 	apt-get install -f -y gearman
 
-## Expose the standar port for gearman
+## Expose the standard port for gearman
 EXPOSE 4730
 
-## Run gearman (we need -L 0.0.0.0 for avoid ipv6 bug)
+## Run gearman foreground (we need -L 0.0.0.0 for avoid ipv6 bug)
 CMD gearmand -p 4730 -L 0.0.0.0
